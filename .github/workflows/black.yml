@@ -1,0 +1,31 @@
+name: Black Check
+
+on:
+  pull_request:
+    paths:
+      - '**/*.py'
+
+jobs:
+  black:
+    name: Check Black Formatting
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check Out Code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+
+      - name: Install Dependencies
+        run: pip install black
+
+      - name: Run Black Check
+        run: black --check .
+
+      - name: Post Black Check Comment
+        if: ${{ failure() }}
+        run: echo "::error::Code formatting issues found. Please run 'black .' locally and commit the changes."
+
