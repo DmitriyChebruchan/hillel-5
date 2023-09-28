@@ -18,5 +18,4 @@ from django.contrib import admin
 from django.urls import path
 from teacher_management_app.views import show_teachers
 
-urlpatterns = [path("admin/", admin.site.urls),
-               path("", show_teachers)]
+urlpatterns = [path("admin/", admin.site.urls), path("", show_teachers)]
