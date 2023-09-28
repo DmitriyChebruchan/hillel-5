@@ -1,0 +1,17 @@
+.row_div {
+  display: flex;
+  flex-wrap: wrap; /* Allow children to wrap to the next row */
+  justify-content: flex-start; /* Align children to the start of the container horizontally */
+}
+
+.num_div {
+    width: 7%;
+}
+
+.name {
+    width: 25%;
+}
+
+.age {
+    width: 6%;
+}
