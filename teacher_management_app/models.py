@@ -4,4 +4,4 @@ from django.db import models
 
 
 def dummy_2():
-    return 1
+    return 2
