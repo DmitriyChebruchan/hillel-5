@@ -16,7 +16,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from teacher_management_app.views import show_teachers
 
-urlpatterns = [
-    path("admin/", admin.site.urls),
-]
+urlpatterns = [path("admin/", admin.site.urls), path("teachers_list/", show_teachers)]
