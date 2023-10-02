@@ -1,7 +1,9 @@
-from django.core.management.base import BaseCommand, CommandError
-from teacher_management_app.models import Teacher
-from faker import Faker
 import random
+
+from django.core.management.base import BaseCommand
+from faker import Faker
+
+from teacher_management_app.models import Teacher
 
 fake = Faker()
 subjects = ["Math", "English", "Ethics"]
@@ -24,6 +26,7 @@ class Command(BaseCommand):
 
             self.stdout.write(
                 self.style.SUCCESS(
-                    '{}. Successfully added teacher "{}"'.format(i + 1, t.first_name)
+                    '{}. Successfully added teacher "{}"'.format(
+                        i + 1, t.first_name)
                 )
             )
