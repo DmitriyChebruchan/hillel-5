@@ -10,7 +10,7 @@ subjects = ["Math", "English", "Ethics"]
 
 
 class Command(BaseCommand):
-    help = "Add teachers to data base"
+    help = "Add teachers to data base "
 
     def add_arguments(self, parser):
         parser.add_argument("--number", type=int, default=100)
