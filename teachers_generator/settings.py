@@ -93,13 +93,16 @@ AUTH_PASSWORD_VALIDATORS = [
         + "eSimilarityValidator",
     },
     {
-        "NAME": "django.contrib.auth.password_validation.MinimumLen" + "gthValidator",
+        "NAME": "django.contrib.auth.password_validation.MinimumLen" +
+        "gthValidator",
     },
     {
-        "NAME": "django.contrib.auth.password_validation.CommonPassword" + "Validator",
+        "NAME": "django.contrib.auth.password_validation.CommonPassword" +
+        "Validator",
     },
     {
-        "NAME": "django.contrib.auth.password_validation.NumericPassword" + "Validator",
+        "NAME": "django.contrib.auth.password_validation.NumericPassword" +
+        "Validator",
     },
 ]
 
