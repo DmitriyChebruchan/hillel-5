@@ -17,11 +17,13 @@ class TeacherForm(forms.ModelForm):
 
         # Check if 'first_name' contains digits
         if any(char.isdigit() for char in first_name):
-            self.add_error("first_name", "First name should not contain digits.")
+            self.add_error(
+                "first_name", "First name should not contain digits.")
 
         # Check if 'patronymic' contains digits
         if any(char.isdigit() for char in patronymic):
-            self.add_error("patronymic", "Patronymic should not contain digits.")
+            self.add_error("patronymic",
+                           "Patronymic should not contain digits.")
 
         # Check if 'surname' contains digits
         if any(char.isdigit() for char in surname):
