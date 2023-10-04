@@ -20,7 +20,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-5c)j1(-+du9#-_%r%k^xt0i(b3q=-*j!j((r8g1w=bt^9cg)5q"
+SECRET_KEY = "django-insecure-5c)j1(-+du9#-_%r%k" + \
+    "^xt0i(b3q=-*j!j((r8g1w=bt^9cg)5q"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -38,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "teacher_management_app.apps.TeacherManagementAppConfig",
+    "group_management_app.apps.GroupManagementAppConfig",
 ]
 
 MIDDLEWARE = [
@@ -87,16 +89,17 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
+        "NAME": "django.contrib.auth.password_validation.UserAttribut"
+        + "eSimilarityValidator",
     },
     {
-        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
+        "NAME": "django.contrib.auth.password_validation.MinimumLen" + "gthValidator",
     },
     {
-        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
+        "NAME": "django.contrib.auth.password_validation.CommonPassword" + "Validator",
     },
     {
-        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
+        "NAME": "django.contrib.auth.password_validation.NumericPassword" + "Validator",
     },
 ]
 

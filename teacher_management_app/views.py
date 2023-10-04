@@ -1,7 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect, render
+
+from teacher_management_app.models import Teacher
 
 from .forms import TeacherForm
-from teacher_management_app.models import Teacher
 
 
 def show_teachers(request):
@@ -11,15 +12,14 @@ def show_teachers(request):
 
 
 def create_teacher(request):
-
-    if request.method == 'POST':
+    if request.method == "POST":
         form = TeacherForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('/teachers/')
+            return redirect("/teachers/")
 
     else:
-        if request.method == 'GET':
+        if request.method == "GET":
             form = TeacherForm()
 
-    return render(request, 'teacher/teacher_form.html', {'form': form})
+    return render(request, "teacher/teacher_form.html", {"form": form})

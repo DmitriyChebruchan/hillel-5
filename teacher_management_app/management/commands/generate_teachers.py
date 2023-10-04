@@ -26,6 +26,7 @@ class Command(BaseCommand):
 
             self.stdout.write(
                 self.style.SUCCESS(
-                    '{}. Successfully added teacher "{}"'.format(i + 1, t.first_name)
+                    '{}. Successfully added teacher "{}"'.format(
+                        i + 1, t.first_name)
                 )
             )
