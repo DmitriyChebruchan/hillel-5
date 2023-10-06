@@ -13,13 +13,13 @@
       <div class="row_div">
         <div class="num_div">No.</div>
         <div class="name">Name</div>
-        <div class="age">Curator</div>
+        <div class="small_number">Curator</div>
       </div>
       {%for i in data%}
       <div class="row_div">
         <div class="num_div">{{forloop.counter}}.</div>
         <div class="name">{{i}}</div>
-        <div class="age">{{i.curator}}</div>
+        <div class="small_number">{{i.curator}}</div>
       </div>
       {%endfor%}
     </div>

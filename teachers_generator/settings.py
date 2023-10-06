@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "teacher_management_app.apps.TeacherManagementAppConfig",
     "group_management_app.apps.GroupManagementAppConfig",
+    "student_management_app.apps.StudentManagementAppConfig"
 ]
 
 MIDDLEWARE = [

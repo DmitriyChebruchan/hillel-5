@@ -7,7 +7,8 @@ from .forms import TeacherForm
 
 def show_teachers(request):
     all_teachers = Teacher.objects.all()
-    return render(request, "teacher/list_of_teachers.html", {"data": all_teachers})
+    return render(request, "teacher/list_of_teachers.html",
+                  {"data": all_teachers})
 
 
 def create_teacher(request):
@@ -22,3 +23,11 @@ def create_teacher(request):
             form = TeacherForm()
 
     return render(request, "teacher/teacher_form.html", {"form": form})
+
+
+def edit_teacher():
+    return
+
+
+def delete_teacher():
+    return

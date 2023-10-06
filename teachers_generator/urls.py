@@ -24,4 +24,5 @@ urlpatterns = [
     path("", index_page),
     path("", include("teacher_management_app.urls")),
     path("", include("group_management_app.urls")),
+    path("", include("student_management_app.urls")),
 ]
