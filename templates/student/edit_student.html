@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" href="../static/css/style.css" />
+  <head>
+    <title>Edit or Delete Student</title>
+  </head>
+  <body>
+    <a href="list_students">Back to Student List</a>
+
+    <h1>Edit or Delete Student</h1>
+
+    <form method="post">
+      {% csrf_token %} {{ form.as_p }}
+
+      <!-- Buttons for editing and deleting -->
+      <button type="submit">Save Changes</button>
+      <button type="submit" name="delete" class="del_btn">
+        Delete Student
+      </button>
+    </form>
+  </body>
+</html>

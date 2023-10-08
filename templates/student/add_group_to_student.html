@@ -1,0 +1,15 @@
+<!-- templates/student/add_group_to_student.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Add/Edit Group to Student</title>
+</head>
+<body>
+    <h1>Add/Edit Group to {{ student.name }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Add Group">
+    </form>
+</body>
+</html>

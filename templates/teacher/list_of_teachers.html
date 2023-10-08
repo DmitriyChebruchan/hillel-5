@@ -7,11 +7,21 @@
     <title>Document</title>
   </head>
   <body>
-    <h3><a href="/">Main page</a></h3>
+    <h2>Usefull links</h2>
+    <ul>
+      <li><a href="/">Main page</a></li>
+      <li><a href="/create_teacher/">Create teacher</a></li>
+      <li>
+        Edit teacher. To edit teacher click on ID of the teacher you want to
+        edit.
+      </li>
+      <li><a href="/list_of_teachers/">All teachers</a></li>
+    </ul>
     <h1>Teachers</h1>
     <div class="mother_div">
       <div class="row_div">
         <div class="num_div">No.</div>
+        <div class="num_div">ID</div>
         <div class="name">Name Patronymic Surname</div>
         <div class="small_number">Age</div>
         <div class="subject">Subject</div>
@@ -19,6 +29,9 @@
       {%for i in data%}
       <div class="row_div">
         <div class="num_div">{{forloop.counter}}.</div>
+        <div class="num_div">
+          <a href="/edit_teacher/{{ i.id }}">{{ i.id }}</a>
+        </div>
         <div class="name">{{i}}</div>
         <div class="small_number">{{i.age}}</div>
         <div class="subject">{{i.subject}}</div>

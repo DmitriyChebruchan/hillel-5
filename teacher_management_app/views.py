@@ -1,4 +1,6 @@
+from django.http import JsonResponse
 from django.shortcuts import redirect, render
+from django.urls import reverse
 
 from teacher_management_app.models import Teacher
 
@@ -25,9 +27,24 @@ def create_teacher(request):
     return render(request, "teacher/teacher_form.html", {"form": form})
 
 
-def edit_teacher():
-    return
+def edit_teacher(request, pk):
+    teacher = Teacher.objects.get(pk=pk)
 
+    if request.method == "GET":
+        form = TeacherForm(instance=teacher)
+        return render(request, "teacher/edit_teacher.html", {"form": form})
 
-def delete_teacher():
-    return
+    form = TeacherForm(request.POST, instance=teacher)
+
+    if "delete" in request.POST:
+        try:
+            teacher.delete()
+        except Exception as e:
+            return JsonResponse({"error": f"An error occurred: {str(e)}"},
+                                status=500)
+
+    if form.is_valid():
+        form.save()
+        return redirect(reverse("list_of_teachers"))
+
+    return render(request, "teacher/edit_teacher.html", {"form": form})

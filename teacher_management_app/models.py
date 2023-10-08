@@ -6,7 +6,7 @@ class Teacher(models.Model):
     first_name = models.CharField(max_length=50)
     patronymic = models.CharField(max_length=150)
     surname = models.CharField(max_length=50)
-    age = models.IntegerField()
+    age = models.PositiveIntegerField()
     subject = models.CharField(max_length=100)
 
     def __str__(self):
