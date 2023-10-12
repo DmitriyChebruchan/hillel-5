@@ -1,4 +1,8 @@
-from django.shortcuts import get_object_or_404, redirect, render
+from django.shortcuts import (
+    get_object_or_404,
+    redirect,
+    render,
+)
 from django.urls import reverse
 
 from student_management_app.models import Student
@@ -8,8 +12,11 @@ from .forms import AddingStudentToGroupForm, StudentForm
 
 def show_students(request):
     all_students = Student.objects.all()
-    return render(request, "student/list_of_students.html",
-                  {"data": all_students})
+    return render(
+        request,
+        "student/list_of_students.html",
+        {"data": all_students},
+    )
 
 
 def create_student(request):
@@ -30,7 +37,11 @@ def edit_student(request, pk):
     student = Student.objects.get(pk=pk)
     if request.method == "GET":
         form = StudentForm(instance=student)
-        return render(request, "student/edit_student.html", {"form": form})
+        return render(
+            request,
+            "student/edit_student.html",
+            {"form": form},
+        )
 
     form = StudentForm(request.POST, instance=student)
 
@@ -57,6 +68,7 @@ def add_students_to_group(request, pk):
         form = AddingStudentToGroupForm(instance=student)
 
     return render(
-        request, "student/add_group_to_student.html",
-        {"form": form, "student": student}
+        request,
+        "student/add_group_to_student.html",
+        {"form": form, "student": student},
     )

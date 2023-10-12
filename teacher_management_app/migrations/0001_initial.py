@@ -21,10 +21,19 @@ class Migration(migrations.Migration):
                         verbose_name="ID",
                     ),
                 ),
-                ("first_name", models.CharField(max_length=50)),
-                ("surname", models.CharField(max_length=50)),
+                (
+                    "first_name",
+                    models.CharField(max_length=50),
+                ),
+                (
+                    "surname",
+                    models.CharField(max_length=50),
+                ),
                 ("age", models.IntegerField()),
-                ("subject", models.CharField(max_length=100)),
+                (
+                    "subject",
+                    models.CharField(max_length=100),
+                ),
             ],
         ),
     ]

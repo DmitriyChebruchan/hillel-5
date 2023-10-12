@@ -5,7 +5,10 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("group_management_app", "0002_alter_group_curator"),
+        (
+            "group_management_app",
+            "0002_alter_group_curator",
+        ),
         ("student_management_app", "0002_student_year"),
     ]
 
@@ -14,7 +17,8 @@ class Migration(migrations.Migration):
             model_name="student",
             name="group",
             field=models.ManyToManyField(
-                related_name="student", to="group_management_app.group"
+                related_name="student",
+                to="group_management_app.group",
             ),
         ),
     ]

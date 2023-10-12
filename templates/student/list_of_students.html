@@ -7,6 +7,7 @@
     <title>Document</title>
   </head>
   <body>
+    {{ form.errors }}
     <h2>Usefull links</h2>
     <ul>
       <li><a href="/">Main page</a></li>
@@ -29,7 +30,8 @@
         <div class="bl-1 name">Name</div>
         <div class="bl-1 num_div">Surname</div>
         <div class="bl-1 num_div">Year</div>
-        <div class="bl-1 name">Group(s)</div>
+        <div class="bl-1 num_div">Group(s)</div>
+        <div class="bl-1 name">Phone number</div>
       </div>
       {% for i in data %}
       <div class="row_div">
@@ -40,13 +42,14 @@
         <div class="bl-1 name">{{ i.first_name }}</div>
         <div class="bl-1 num_div">{{ i.surname }}</div>
         <div class="bl-1 num_div">{{ i.year }}</div>
-        <div class="bl-1 name">
+        <div class="bl-1 num_div">
           <a href="/adding_student_to_group/{{ i.id }}"
             >{% for group_obj in i.group.all %}
             <span>{{ group_obj.name }} </span>
             {% endfor %}</a
           >
         </div>
+        <div class="bl-1 name">{{ i.phone_number }}</div>
       </div>
       {% endfor %}
     </div>

@@ -7,7 +7,11 @@ from .forms import GroupForm
 
 def show_groups(request):
     all_groups = Group.objects.all()
-    return render(request, "group/list_of_groups.html", {"data": all_groups})
+    return render(
+        request,
+        "group/list_of_groups.html",
+        {"data": all_groups},
+    )
 
 
 def create_group(request):

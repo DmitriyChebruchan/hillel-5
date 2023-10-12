@@ -22,7 +22,10 @@ class Migration(migrations.Migration):
                     ),
                 ),
                 ("name", models.CharField(max_length=50)),
-                ("curator", models.CharField(max_length=100)),
+                (
+                    "curator",
+                    models.CharField(max_length=100),
+                ),
             ],
         ),
     ]

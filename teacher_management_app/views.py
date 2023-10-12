@@ -9,8 +9,11 @@ from .forms import TeacherForm
 
 def show_teachers(request):
     all_teachers = Teacher.objects.all()
-    return render(request, "teacher/list_of_teachers.html",
-                  {"data": all_teachers})
+    return render(
+        request,
+        "teacher/list_of_teachers.html",
+        {"data": all_teachers},
+    )
 
 
 def create_teacher(request):
@@ -32,7 +35,11 @@ def edit_teacher(request, pk):
 
     if request.method == "GET":
         form = TeacherForm(instance=teacher)
-        return render(request, "teacher/edit_teacher.html", {"form": form})
+        return render(
+            request,
+            "teacher/edit_teacher.html",
+            {"form": form},
+        )
 
     form = TeacherForm(request.POST, instance=teacher)
 
@@ -40,8 +47,10 @@ def edit_teacher(request, pk):
         try:
             teacher.delete()
         except Exception as e:
-            return JsonResponse({"error": f"An error occurred: {str(e)}"},
-                                status=500)
+            return JsonResponse(
+                {"error": f"An error occurred: {str(e)}"},
+                status=500,
+            )
 
     if form.is_valid():
         form.save()
