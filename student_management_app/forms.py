@@ -28,11 +28,14 @@ class StudentForm(forms.ModelForm):
         if len(phone) < min_phone_length:
             raise forms.ValidationError("Phone is too short")
 
-        parsed_phone = phonenumbers.parse(phone)
-        format = phonenumbers.PhoneNumberFormat.INTERNATIONAL
-        phone = phonenumbers.format_number(
-            numobj=parsed_phone, num_format=format
-        )
+        try:
+            parsed_phone = phonenumbers.parse(phone)
+            format = phonenumbers.PhoneNumberFormat.INTERNATIONAL
+            phone = phonenumbers.format_number(
+                numobj=parsed_phone, num_format=format
+            )
+        except phonenumbers.phonenumberutil.NumberParseException:
+            raise forms.ValidationError("Invalid phone number")
 
         # Check if 'first_name' contains digits
         if any(char.isdigit() for char in first_name):

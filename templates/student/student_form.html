@@ -5,13 +5,12 @@
   </head>
   <body>
     <h2>Create a New Student</h2>
+    {% if form.errors %}
+    <h1>ERROR</h1>
+    {% endif %}
     <form method="post">
       {% csrf_token %} {{ form.as_p }}
       <button type="submit">Submit</button>
     </form>
-
-    {% if form.errors %}
-    <h1>ERROR</h1>
-    {% endif %}
   </body>
 </html>
